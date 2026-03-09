@@ -83,18 +83,12 @@ public class MenuButton {
         closeMenu.add(questionClose());
         return closeMenu;
     }
-    private void closeApplication(){
-        int message = JOptionPane.showConfirmDialog(parentFrame, "Вы действительно выходите?", "Подтверждение ",
-                JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-        if (message == JOptionPane.YES_OPTION){
-            parentFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            parentFrame.dispatchEvent(new WindowEvent(parentFrame, WindowEvent.WINDOW_CLOSING));
-        }
-    }
 
     private JMenuItem questionClose(){
         JMenuItem checkCloseMenu = new JMenuItem("Вы уверены?", KeyEvent.VK_S);
-        checkCloseMenu.addActionListener((event)-> {closeApplication();});
+        checkCloseMenu.addActionListener((event)-> {
+            ((MainApplicationFrame) parentFrame).closeApplication();
+        });
         return checkCloseMenu;
     }
 
