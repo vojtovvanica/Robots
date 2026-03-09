@@ -10,10 +10,6 @@ import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.WindowEvent;
 
-/**
- * Конструктор класса MenuButton
- * @param parentFrame родительское окно, к которому привязывается меню
- * */
 public class MenuButton {
     private final JFrame parentFrame;
     /** Создает панель меню
@@ -123,7 +119,7 @@ public class MenuButton {
      * setDefaultCloseOperation - пользовательское закрытие через крестик
      * dispatchEvent - искусственное закрытие
      * */
-    private void closeApplication(){
+    public void closeApplication(){
         int message = JOptionPane.showConfirmDialog(parentFrame, "Вы действительно выходите?", "Подтверждение ",
                 JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
         if (message == JOptionPane.YES_OPTION){

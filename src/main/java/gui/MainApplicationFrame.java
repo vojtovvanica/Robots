@@ -39,8 +39,7 @@ public class MainApplicationFrame extends JFrame
 
         MenuButton menuButton = new MenuButton(this);
         setJMenuBar(menuButton.generateMenuBar());
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
-    }
+        setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);    }
     
     protected LogWindow createLogWindow()
     {
