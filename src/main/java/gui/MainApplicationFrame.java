@@ -6,7 +6,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.WindowEvent;
-
 /**
  * Что требуется сделать:
  * 1. Метод создания меню перегружен функционалом и трудно читается. 
@@ -39,7 +38,10 @@ public class MainApplicationFrame extends JFrame
 
         MenuButton menuButton = new MenuButton(this);
         setJMenuBar(menuButton.generateMenuBar());
-        setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);    }
+
+
+        setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
+    }
     
     protected LogWindow createLogWindow()
     {
