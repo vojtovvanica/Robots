@@ -1,7 +1,3 @@
-//new JFrame - окно
-//new JMenu - панель меню
-//new JMenuBar - окно меню
-//new JMenuItem - элемент окна меню
 package gui;
 import log.Logger;
 
