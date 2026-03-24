@@ -5,33 +5,29 @@ import log.Logger;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
-import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-/**
- * Что требуется сделать:
- * 1. Метод создания меню перегружен функционалом и трудно читается. 
- * Следует разделить его на серию более простых методов (или вообще выделить отдельный класс).
- *
- *
- */
+import java.awt.event.WindowAdapter;
+
+
 public class MainApplicationFrame extends JFrame
 {
     private final JDesktopPane desktopPane = new JDesktopPane();
-
+    
     public MainApplicationFrame() {
         int inset = 50;
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         setBounds(inset, inset,
-                screenSize.width  - inset*2,
-                screenSize.height - inset*2);
+            screenSize.width  - inset*2,
+            screenSize.height - inset*2);
 
         setContentPane(desktopPane);
-
+        
+        
         LogWindow logWindow = createLogWindow();
         addWindow(logWindow);
 
         GameWindow gameWindow = new GameWindow();
-        gameWindow.setSize(400, 400);
+        gameWindow.setSize(400,  400);
         addWindow(gameWindow);
 
         MenuButton menuButton = new MenuButton(this);
@@ -43,16 +39,16 @@ public class MainApplicationFrame extends JFrame
                 closeApplication();
             }
         });
+
     }
-    public void closeApplication() {
+     public void closeApplication(){
         int message = JOptionPane.showConfirmDialog(this, "Вы действительно выходите?", "Подтверждение ",
                 JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-        if (message == JOptionPane.YES_OPTION) {
+        if (message == JOptionPane.YES_OPTION){
             this.dispose();
             System.exit(0);
         }
     }
-
     protected LogWindow createLogWindow()
     {
         LogWindow logWindow = new LogWindow(Logger.getDefaultLogSource());
@@ -63,7 +59,7 @@ public class MainApplicationFrame extends JFrame
         Logger.debug("Протокол работает");
         return logWindow;
     }
-
+    
     protected void addWindow(JInternalFrame frame)
     {
         desktopPane.add(frame);
