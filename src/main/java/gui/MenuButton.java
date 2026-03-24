@@ -81,7 +81,7 @@ public class MenuButton {
     }
 
     private JMenuItem questionClose(){
-        JMenuItem checkCloseMenu = new JMenuItem("Вы уверены?", KeyEvent.VK_S);
+        JMenuItem checkCloseMenu = new JMenuItem("Вы уверены", KeyEvent.VK_S);
         checkCloseMenu.addActionListener((event)-> {
             ((MainApplicationFrame) parentFrame).closeApplication();
         });
